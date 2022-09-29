@@ -15,12 +15,12 @@ public class Swatter : MonoBehaviour
     public UnityEvent damagePlayer;
 
     private Vector3 aimOffset;
+    private Animator anim;
     bool aimCd;
     bool swatCd;
     bool swat = false;
 
 
-    private Color startcolor;
     //Todo:
     /*
      * Swat (sendmessage)
@@ -28,7 +28,8 @@ public class Swatter : MonoBehaviour
 
     private void Start()
     {
-        startcolor = paddle.GetComponent<SpriteRenderer>().color;
+        //startcolor = paddle.GetComponent<SpriteRenderer>().color;
+        anim = GetComponent<Animator>();
     }
     void Update()
     {
@@ -63,9 +64,10 @@ public class Swatter : MonoBehaviour
     {
         swatCd = true;
         swat = true;
-        paddle.GetComponent<SpriteRenderer>().color = Color.red;
+        anim.SetTrigger("Attack");
+        //paddle.GetComponent<SpriteRenderer>().color = Color.red;
         yield return new WaitForSeconds(swatCooldown);
-        paddle.GetComponent<SpriteRenderer>().color = startcolor;
+        //paddle.GetComponent<SpriteRenderer>().color = startcolor;
         swatCd = false;
         yield return new WaitForSeconds(0.1f);
         swat = false;
