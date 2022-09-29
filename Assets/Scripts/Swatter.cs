@@ -16,6 +16,7 @@ public class Swatter : MonoBehaviour
 
     private Vector3 aimOffset;
     private Animator anim;
+    private float distToPlayer;
     bool aimCd;
     bool swatCd;
     bool swat = false;
@@ -33,15 +34,17 @@ public class Swatter : MonoBehaviour
     }
     void Update()
     {
+        distToPlayer = Vector2.Distance(paddle.transform.position, player.position);
         if (!swat)
         {
-            transform.position = Vector2.Lerp(transform.position, (player.position + aimOffset) - new Vector3(0, 5), moveSpeed * Time.deltaTime);
+            transform.position = Vector2.Lerp(transform.position, (player.position + aimOffset) - new Vector3(0, 4), moveSpeed * Time.deltaTime);
 
             Vector3 direction = transform.position - player.position;
             Quaternion rotTarget = Quaternion.LookRotation(Vector3.forward, -direction);
 
             transform.rotation = Quaternion.Slerp(transform.rotation, rotTarget, lookSpeed * Time.deltaTime);
-            if(Vector2.Distance(paddle.transform.position, player.position) < 1)
+
+            if (distToPlayer < 1.6f)
             {
                 StartCoroutine(attack());
             }
@@ -65,11 +68,19 @@ public class Swatter : MonoBehaviour
         swatCd = true;
         swat = true;
         anim.SetTrigger("Attack");
-        //paddle.GetComponent<SpriteRenderer>().color = Color.red;
-        yield return new WaitForSeconds(swatCooldown);
-        //paddle.GetComponent<SpriteRenderer>().color = startcolor;
+        yield return new WaitForSeconds(0.18f);
+        //Replace this with a trigger enter
+        if (distToPlayer < 1.4f)
+        {
+            damagePlayer.Invoke();
+            Debug.Log("Hit!");
+        }
+        else
+        {
+            Debug.Log("Miss!");
+        }
         swatCd = false;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(swatCooldown);
         swat = false;
     }
 }
