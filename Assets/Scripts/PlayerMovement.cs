@@ -1,11 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private UnityEvent windowScore;
+    [SerializeField] private float windowCoolDown;
     private Vector2 moveDirection;
+
+    private Animator anim;
+    private bool hitWindow;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -20,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, movementDirection);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            anim.SetBool("Moving", true);
+        }
+        else
+        {
+            anim.SetBool("Moving", false);
         }
     }
 
@@ -29,6 +45,11 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 3.5f;
             StartCoroutine(speedTime());
+            if(collision.collider.tag == "Window" && hitWindow == false)
+            {
+                StartCoroutine(windowCd());
+                windowScore.Invoke();
+            }
         }
     }
 
@@ -36,5 +57,11 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         speed = 7;
+    }
+    IEnumerator windowCd()
+    {
+        hitWindow = true;
+        yield return new WaitForSeconds(windowCoolDown);
+        hitWindow = false;
     }
 }

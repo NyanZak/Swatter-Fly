@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text scoreText;
     public float scoreCount;
     public float pointsPerSecond;
+    public float scorePerWindow;
 
     private void Start()
     {
@@ -19,5 +20,10 @@ public class ScoreManager : MonoBehaviour
     {
         scoreText.text = "Score: " +(int)scoreCount;
         scoreCount += pointsPerSecond * Time.deltaTime;
+    }
+
+    public void windowScore()
+    {
+        scoreCount += scorePerWindow;
     }
 }
