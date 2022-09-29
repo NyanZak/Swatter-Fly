@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2260a05312ee41c44a047f947b9cf3c7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - AllMixer: {fileID: 24100000, guid: 9b020b644754a1a49af5fe8433fd35ac, type: 2}
+  - Game: {fileID: 5074221778816036561, guid: 9b020b644754a1a49af5fe8433fd35ac, type: 2}
+  - Music: {fileID: 6509194187775666915, guid: 9b020b644754a1a49af5fe8433fd35ac, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
