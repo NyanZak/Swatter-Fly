@@ -35,7 +35,7 @@ public class Swatter : MonoBehaviour
     {
         if (!swat)
         {
-            transform.position = Vector2.Lerp(transform.position, (player.position + aimOffset) - new Vector3(0, 3), moveSpeed * Time.deltaTime);
+            transform.position = Vector2.Lerp(transform.position, (player.position + aimOffset) - new Vector3(0, 5), moveSpeed * Time.deltaTime);
 
             Vector3 direction = transform.position - player.position;
             Quaternion rotTarget = Quaternion.LookRotation(Vector3.forward, -direction);
