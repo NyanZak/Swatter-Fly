@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     [SerializeField] private UnityEvent windowScore;
     [SerializeField] private float windowCoolDown;
+    [SerializeField] private GameObject bonk;
+    
     private Vector2 moveDirection;
 
     private Animator anim;
@@ -43,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.collider.tag == "Wall" || collision.collider.tag == "Window")
         {
+            Instantiate(bonk, transform.position, Quaternion.identity);
             speed = 3.5f;
             StartCoroutine(speedTime());
             if(collision.collider.tag == "Window" && hitWindow == false)

@@ -3624,6 +3624,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8224150478172599838, guid: 452bf3ba0503864459d44b405b96e327, type: 3}
+      propertyPath: bang
+      value: 
+      objectReference: {fileID: 4113453770567582845, guid: 73530eb4616f44f4b82b33081d9ce856, type: 3}
+    - target: {fileID: 8224150478172599838, guid: 452bf3ba0503864459d44b405b96e327, type: 3}
+      propertyPath: wham
+      value: 
+      objectReference: {fileID: 4113453770567582845, guid: e5671701e598105418989d78ad2f43ae, type: 3}
+    - target: {fileID: 8224150478172599838, guid: 452bf3ba0503864459d44b405b96e327, type: 3}
+      propertyPath: splat
+      value: 
+      objectReference: {fileID: 4113453770567582845, guid: c169b53b593e5c04cb71559ed5c97aa4, type: 3}
+    - target: {fileID: 8224150478172599838, guid: 452bf3ba0503864459d44b405b96e327, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 2075092701}
@@ -7934,6 +7946,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8100124551222997499, guid: a54dfa4688f023a49a7d3192cff8e389, type: 3}
+      propertyPath: bonk
+      value: 
+      objectReference: {fileID: 4113453770567582845, guid: e4b1415d381c0c545b1dfe881d6c8b4b, type: 3}
     - target: {fileID: 8100124551222997499, guid: a54dfa4688f023a49a7d3192cff8e389, type: 3}
       propertyPath: windowCoolDown
       value: 2

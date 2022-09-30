@@ -14,6 +14,10 @@ public class Swatter : MonoBehaviour
     public float swatCooldown;
     public UnityEvent damagePlayer;
 
+    public GameObject wham;
+    public GameObject bang;
+    public GameObject splat;
+
     private Vector3 aimOffset;
     private Animator anim;
     private float distToPlayer;
@@ -71,9 +75,14 @@ public class Swatter : MonoBehaviour
             //damagePlayer.Invoke();
             Debug.Log("Hit!");
             PauseMenu.strikes += 1;
+            if(PauseMenu.strikes < 3)
+                Instantiate(bang, paddle.transform.position, Quaternion.identity);
+            else
+                Instantiate(splat, player.position, Quaternion.identity);
         }
         else
         {
+            Instantiate(wham, paddle.transform.position, Quaternion.identity);
             Debug.Log("Miss!");
         }
         swatCd = false;
