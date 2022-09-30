@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5565742223864794849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5565742223864794855}
+  - component: {fileID: 5565742223864794848}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5565742223864794855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565742223864794849}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.2582645, y: -0.7773161, z: 121.35844}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5565742223864794848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5565742223864794849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0078179894f72f4cba90480aa92f7c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Bathroom
+    clip: {fileID: 8300000, guid: 8b78c5527e41be149a603668f572dda7, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    group: {fileID: 6509194187775666915, guid: 9b020b644754a1a49af5fe8433fd35ac, type: 2}
+  - name: LowHealth
+    clip: {fileID: 8300000, guid: 59b45f6924441a645b385b3cc0776157, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    group: {fileID: 6509194187775666915, guid: 9b020b644754a1a49af5fe8433fd35ac, type: 2}
+  - name: MainMenu
+    clip: {fileID: 8300000, guid: b1486cd9feb1ebc4abdd27b87c72c4db, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 6509194187775666915, guid: 9b020b644754a1a49af5fe8433fd35ac, type: 2}
+  - name: Intro
+    clip: {fileID: 8300000, guid: bd34b8d5107d76a4daee9408d38b8510, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 6509194187775666915, guid: 9b020b644754a1a49af5fe8433fd35ac, type: 2}
+  - name: BuzzSelect
+    clip: {fileID: 8300000, guid: 263c75d9d155a3d4ab40c2fa094e3ac5, type: 3}
+    volume: 0.125
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 5074221778816036561, guid: 9b020b644754a1a49af5fe8433fd35ac, type: 2}
+  - name: Electric
+    clip: {fileID: 8300000, guid: 7c661fad8d040f6488e2c209408bf8a7, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 5074221778816036561, guid: 9b020b644754a1a49af5fe8433fd35ac, type: 2}
+  - name: FlyBuzz
+    clip: {fileID: 8300000, guid: ce4f56a6b7bd18e488762a389ee428c8, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 5074221778816036561, guid: 9b020b644754a1a49af5fe8433fd35ac, type: 2}
+  - name: Spray
+    clip: {fileID: 8300000, guid: 13bf1456a4c104f41af50225b181cba5, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 5074221778816036561, guid: 9b020b644754a1a49af5fe8433fd35ac, type: 2}
+  - name: Swat
+    clip: {fileID: 8300000, guid: 08eca8dff2935cc4d800f294622e80e8, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 5074221778816036561, guid: 9b020b644754a1a49af5fe8433fd35ac, type: 2}

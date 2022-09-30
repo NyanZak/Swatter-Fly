@@ -37,6 +37,8 @@ public class Swatter : MonoBehaviour
         distToPlayer = Vector2.Distance(paddle.transform.position, player.position);
         if (!swat)
         {
+            FindObjectOfType<AudioManager>().Play("Swat");
+
             transform.position = Vector2.Lerp(transform.position, (player.position + aimOffset) - new Vector3(0, 4), moveSpeed * Time.deltaTime);
 
             Vector3 direction = transform.position - player.position;
