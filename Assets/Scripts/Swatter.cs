@@ -21,16 +21,10 @@ public class Swatter : MonoBehaviour
     bool swatCd;
     bool swat = false;
 
-
-    //Todo:
-    /*
-     * Swat (sendmessage)
-     */
-
     private void Start()
     {
-        //startcolor = paddle.GetComponent<SpriteRenderer>().color;
         anim = GetComponent<Animator>();
+        StartCoroutine(delay());
     }
     void Update()
     {
@@ -84,6 +78,12 @@ public class Swatter : MonoBehaviour
         }
         swatCd = false;
         yield return new WaitForSeconds(swatCooldown);
+        swat = false;
+    }
+    IEnumerator delay()
+    {
+        swat = true;
+        yield return new WaitForSeconds(2);
         swat = false;
     }
 }

@@ -1884,11 +1884,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8224150478172599808, guid: 452bf3ba0503864459d44b405b96e327, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 8224150478172599808, guid: 452bf3ba0503864459d44b405b96e327, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.97
+      value: -9.76
       objectReference: {fileID: 0}
     - target: {fileID: 8224150478172599808, guid: 452bf3ba0503864459d44b405b96e327, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2862,7 +2862,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197bb7a419994f74793b451e542b96f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  strike1: {fileID: 0}
+  strike2: {fileID: 0}
+  strike3: {fileID: 0}
   pauseMenu: {fileID: 1115497887}
+  gameoverMenu: {fileID: 0}
+  isGameOver: 0
 --- !u!4 &1459364613
 Transform:
   m_ObjectHideFlags: 0
@@ -2891,8 +2896,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 571684736}
+  gameoverScoreText: {fileID: 0}
+  gameoverHiScoreText: {fileID: 0}
   scoreCount: 0
+  hiScoreCount: 0
   pointsPerSecond: 0
+  scorePerWindow: 0
 --- !u!1 &1707499764
 GameObject:
   m_ObjectHideFlags: 0
