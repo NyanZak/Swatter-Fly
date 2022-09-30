@@ -5,8 +5,8 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TMP_Text scoreText;
-    public float scoreCount;
+    public TMP_Text scoreText, gameoverScoreText, gameoverHiScoreText;
+    public float scoreCount, hiScoreCount;
     public float pointsPerSecond;
     public float scorePerWindow;
 
@@ -14,12 +14,24 @@ public class ScoreManager : MonoBehaviour
     {
         scoreCount = 0f;
         pointsPerSecond = 1f;
+
+        if (PlayerPrefs.HasKey("HighScore"))
+        {
+            hiScoreCount = PlayerPrefs.GetFloat("HighScore");
+        }
     }
 
     private void Update()
     {
-        scoreText.text = "Score: " +(int)scoreCount;
+        if (scoreCount > hiScoreCount)
+        {
+            hiScoreCount = scoreCount;
+            PlayerPrefs.SetFloat("HighScore", hiScoreCount);
+        }
         scoreCount += pointsPerSecond * Time.deltaTime;
+        scoreText.text = "Score: " +  (int)scoreCount;
+        gameoverScoreText.text = "" + (int)scoreCount;
+        gameoverHiScoreText.text = "" + (int)hiScoreCount;
     }
 
     public void windowScore()

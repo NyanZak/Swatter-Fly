@@ -17,9 +17,11 @@ public class MouseCursor : MonoBehaviour
     void Update()
     {
         Cursor.visible = false;
+        rend.enabled = false;
 
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
+            rend.enabled = true;
             Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = cursorPos;
             if (Input.GetMouseButtonDown(0))
@@ -35,8 +37,9 @@ public class MouseCursor : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().name == "GameLevel" && PauseMenu.isPaused)
+        if (SceneManager.GetActiveScene().name == "Kitchen" && PauseMenu.isPaused)
         {
+            rend.enabled = true;
             Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = cursorPos;
 

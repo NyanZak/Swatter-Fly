@@ -72,8 +72,9 @@ public class Swatter : MonoBehaviour
         //Replace this with a trigger enter
         if (distToPlayer < 1.4f)
         {
-            damagePlayer.Invoke();
+            //damagePlayer.Invoke();
             Debug.Log("Hit!");
+            PauseMenu.strikes += 1;
         }
         else
         {
